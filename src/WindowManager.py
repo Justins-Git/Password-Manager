@@ -1,11 +1,10 @@
-# PasswordManagerApp.py
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton, QLabel, QLineEdit, QMessageBox, QInputDialog, QStackedWidget
 from PasswordManager import PasswordManager
 from LoginWindow import LoginWindow
 from RegisterWindow import RegisterWindow
 
-class PasswordManagerApp(QMainWindow):
+class WindowManager(QMainWindow):
     def __init__(self, password_manager):
         super().__init__()
         self.password_manager = password_manager
