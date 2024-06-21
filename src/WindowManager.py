@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton, QLabel, QLineEdit, QMessageBox, QInputDialog, QStackedWidget, QComboBox
+from PyQt5.QtCore import Qt
 from PasswordManager import PasswordManager
 from LoginWindow import LoginWindow
 from RegisterWindow import RegisterWindow
@@ -35,6 +36,7 @@ class WindowManager(QMainWindow):
         layout = QVBoxLayout()
 
         self.site_combobox = QComboBox()
+        self.site_combobox.view().setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.site_combobox.addItems(self.password_manager.load_passwords().keys())
         self.site_combobox.currentIndexChanged.connect(self.on_site_selected)
         layout.addWidget(self.site_combobox)
